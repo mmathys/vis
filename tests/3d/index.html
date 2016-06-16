@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+      <meta name="description" content="Template">
+
+      <title>3D</title>
+
+      <!-- Gemeinsames CSS, für alle Tests -->
+      <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+      <!-- Testspezifisches CSS -->
+      <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+
+    <!-- Titel, Auswahl Datensätze -->
+    <div class="toggle container">
+      <p class="caps toggle-title">Dreidimensionaler Scatterplot</p>
+      <div class="clearfix">
+        <div class="sm-col sm-col-4 px2">
+          <div class="red box"></div> <span id="xtext" style="color:black;"></span> (X)
+        </div>
+        <div class="sm-col sm-col-4 px2">
+          <div class="green box"></div> <span id="ytext" style="color:black;"></span> (Y)
+        </div>
+        <div class="sm-col sm-col-4 px2">
+          <div class="blue box"></div> <span id="ztext" style="color:black;"></span> (Z)
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-Block und Container für die Visualisation -->
+    <div id="scroll">
+      <div id="visualization-container">
+        <div id="visualization-wrap">
+        </div>
+      </div>
+      <div id="visualization-container">
+        <div id="visualization-wrap2">
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- Auswahl der Ansichten, Projektionen -->
+    <div class="container clearfix btns">
+      <button class="btn btn-primary" id="toPerspective">Zentralprojektion</button>
+      <button class="btn btn-primary" id="toOrtho">Parallelprojektion</button>
+      <div class="divider"></div>
+      <button class="btn btn-outline" id="xy"><div class="red box"></div> + <div class="green box"></div>:<br>xy-Projektion</button>
+      <button class="btn btn-outline" id="xz"><div class="red box"></div> + <div class="blue box"></div>:<br>xz-Projektion</button>
+      <button class="btn btn-outline" id="zy"><div class="blue box"></div> + <div class="green box"></div>:<br>zy-Projektion</button>
+    </div>
+
+    <br><br>
+
+    <!-- JavaScript Bibliotheken -->
+    <script src="/js/d3.js"></script>
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/three.min.js"></script>
+    <script src="/js/OrbitControls.js"></script>
+    <script src="/js/CombinedCamera.js"></script>
+    <script src="/js/tween.min.js"></script>
+
+    <!-- JavaScript des Tests -->
+    <script src="script.js"></script>
+  </body>
+</html>
