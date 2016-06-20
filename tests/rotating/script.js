@@ -45,7 +45,7 @@ function loadVisualization () {
 
     var geometry = new THREE.SphereGeometry( 1, 4, 4 );
     var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
-    var wireframe = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, transparent: true, wireframeLinewidth: 2 } );
+    var wireframe = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, transparent: true, wireframeLinewidth: 2.5 } );
 
 
     var tetra = new THREE.TetrahedronGeometry( 30, 0 )
