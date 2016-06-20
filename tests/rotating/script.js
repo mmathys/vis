@@ -27,7 +27,7 @@ function loadVisualization () {
 
   function init() {
 
-    renderer = new THREE.WebGLRenderer();
+    renderer = new THREE.WebGLRenderer({alpha: true});
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
@@ -45,21 +45,23 @@ function loadVisualization () {
 
     var geometry = new THREE.SphereGeometry( 1, 4, 4 );
     var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
-    var wireframe = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, transparent: true, wireframeLinewidth: 2.5 } );
-
+    var wireframe = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, wireframeLinewidth: 3 } );
 
     var tetra = new THREE.TetrahedronGeometry( 30, 0 )
     var northlane = new THREE.Mesh( tetra, wireframe );
 
+    //object.add(northlane)
     object.add(northlane)
 
+    var stepScale = 1.3;
+
     var northlane2 = northlane.clone();
-    var scale2 = 2;
+    var scale2 = 1+stepScale;
     northlane2.scale.set(scale2, scale2, scale2)
     object.add(northlane2)
 
     var northlane3 = northlane.clone();
-    var scale3 = scale2+1;
+    var scale3 = scale2+stepScale;
     northlane3.scale.set(scale3, scale3, scale3)
     object.add(northlane3)
 
