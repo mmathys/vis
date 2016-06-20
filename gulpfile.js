@@ -14,6 +14,8 @@ var source = require('vinyl-source-stream')
 var glob = require('glob')
 var path = require('path')
 
+gulp.task('default', ['init', 'develop'])
+
 gulp.task('init', ['libs'])
 gulp.task('build', ['css', 'files', 'js', 'webserver'])
 gulp.task('develop', ['build', 'watch'])

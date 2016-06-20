@@ -19,7 +19,7 @@ loadVisualization()
 
 function loadVisualization () {
 
-  var camera, controls, scene, renderer, material, shape, shape1, shape2, shape3, composer, renderPass, badTVPass, shaderTime
+  var camera, controls, scene, renderer, material, shape, shape1, shape2, shape3, composer, renderPass, badTVPass, shaderTime, sphereShape
   init()
   render()
   function animate () {
@@ -34,18 +34,20 @@ function loadVisualization () {
   	var wireframeMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true, transparent: true } );
   	var multiMaterial = [ darkMaterial, wireframeMaterial ];
 
-    // tetrahedron
+    sphereShape = new THREE.SphereGeometry(30, 16, 16 )
+
     shape = THREE.SceneUtils.createMultiMaterialObject(
-      new THREE.TetrahedronGeometry( 40, 0 ),
+      sphereShape,
       multiMaterial );
 
     var pos = {x: 0, y: 0, z: 0}
 
+
   	shape.position.set(pos.x, pos.y, pos.z);
 
-    shape.rotation.x=Math.PI/4-Math.PI/8+Math.PI/16+Math.PI/32-Math.PI/64-Math.PI/128 // wtf is this
-    shape.rotation.y=Math.PI/4
-    shape.rotation.z=0
+    //shape.rotation.x=Math.PI/4-Math.PI/8+Math.PI/16+Math.PI/32-Math.PI/64-Math.PI/128 // wtf is this
+    //shape.rotation.y=Math.PI/4
+    //shape.rotation.z=0
 
     scene.add( shape );
 
@@ -54,7 +56,7 @@ function loadVisualization () {
     shape1.scale.set(.85,.85,.85);
     scene.add(shape1)
 
-    */
+
 
     shape2 = shape.clone();
     shape2.scale.set(.7,.7,.7);
@@ -63,6 +65,7 @@ function loadVisualization () {
     shape3 = shape.clone();
     shape3.scale.set(.3,.3,.3);
     scene.add(shape3)
+    */
 
     //shape.applyMatrix(new THREE.Matrix4().makeTranslation( -pos.x, -pos.y, -pos.z ) );
 
@@ -103,6 +106,7 @@ function loadVisualization () {
   function render () {
     renderer.render(scene, camera)
     var baseSpeed = 0.01;
+    /*
     shape3.rotation.x+=3*baseSpeed
     shape3.rotation.y-=2.7*baseSpeed
     shape3.rotation.z-=0.7*baseSpeed
@@ -112,10 +116,12 @@ function loadVisualization () {
     shape2.rotation.y-=1.4*baseSpeed
     shape2.rotation.z+=1*baseSpeed
     //shape1.rotation.x+=0.0075
+    */
     shape.rotation.x+=1*baseSpeed
     shape.rotation.y-=1.1*baseSpeed
     shape.rotation.z+=0.3*baseSpeed
 
+    console.log(sphereShape.vertices[0].x)
 
     //shape.rotation.y+=0.007
     //shape.rotation.z+=0.004
@@ -136,7 +142,7 @@ function loadVisualization () {
     //scene.add(new THREE.ArrowHelper(new THREE.Vector3(1, 0, 0), origin, length, 0xff0000))
     //scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 1, 0), origin, length, 0x00ff00))
     //scene.add(new THREE.ArrowHelper(new THREE.Vector3(0, 0, 1), origin, length, 0x0000ff))
-    
+
     var dashed = new THREE.LineDashedMaterial({
       color: 0xdedede,
       dashSize: 3,
