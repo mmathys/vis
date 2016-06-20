@@ -24,6 +24,7 @@ gulp.task('watch', ['files', 'js', 'css'], function () {
   gulp.watch(['./common/scss/*.scss', './tests/**/*.scss'], ['css'])
   gulp.watch(['./tests/**/*.{html,png,jpg,jpeg,svg,csv,json,txt}'], ['files'])
   gulp.watch(['./tests/**/*.js'], ['js'])
+  gulp.watch(['./common/**/*.js'], ['libs'])
 })
 
 gulp.task('refresh', function () {
@@ -81,7 +82,7 @@ gulp.task('js', function () {
 
 
 gulp.task('libs', function() {
-  gulp.src('common/lib/*.js')
+  gulp.src('common/lib/**/*.js')
     .pipe(gulp.dest('dist/js'));
 });
 
