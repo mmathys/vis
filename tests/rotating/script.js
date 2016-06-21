@@ -50,6 +50,11 @@ function loadVisualization () {
     var tetra = new THREE.TetrahedronGeometry( 30, 0 )
     var northlane = new THREE.Mesh( tetra, wireframe );
 
+    //initial rotation
+    object.rotation.x = Math.PI/4-Math.PI/8+Math.PI/16+Math.PI/32-Math.PI/64-Math.PI/128;
+    object.rotation.y = Math.PI/4;
+    object.rotation.z = 0;
+
     //object.add(northlane)
     object.add(northlane)
 
@@ -90,10 +95,11 @@ function loadVisualization () {
     composer = new THREE.EffectComposer( renderer );
     composer.addPass( new THREE.RenderPass( scene, camera ) );
 
-
+    /*
     var effect = new THREE.ShaderPass( THREE.DotScreenShader );
     effect.uniforms[ 'scale' ].value = 4;
-    //composer.addPass( effect );
+    composer.addPass( effect );
+    */
 
 
     var effect = new THREE.ShaderPass( THREE.RGBShiftShader );
