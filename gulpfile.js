@@ -53,7 +53,8 @@ gulp.task('js', function () {
       // Browserify
       var b = browserify({
         entries: file,
-        debug: true
+        debug: true,
+        "transform": [ "glslify" ]
       })
 
       return b.bundle()

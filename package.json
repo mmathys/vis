@@ -19,6 +19,8 @@
     "ejs": "^2.4.1",
     "file": "^0.2.2",
     "glob": "isaacs/node-glob",
+    "glsl-curl-noise": "0.0.4",
+    "glslify": "^5.1.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-jshint": "^1.11.2",
