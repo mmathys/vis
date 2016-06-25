@@ -21,7 +21,7 @@ gulp.task('develop', ['build', 'watch'])
 
 gulp.task('watch', ['files', 'js', 'css'], function () {
   gulp.watch(['./common/scss/*.scss', './tests/**/*.scss'], ['css'])
-  gulp.watch(['./tests/**/*.{html,png,jpg,jpeg,svg,csv,json,txt}'], ['files'])
+  gulp.watch(['./tests/**/*.{html,png,jpg,jpeg,svg,csv,json,txt,glsl}'], ['files'])
   gulp.watch(['./tests/**/*.js'], ['js'])
   gulp.watch(['./common/**/*.js'], ['libs'])
 })

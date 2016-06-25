@@ -28,7 +28,7 @@ void main()
     // vPosition = curlP;
     // vUv = uv;
 
-    gl_PointSize = 2.;
+    gl_PointSize = 1.;
 
     // transforming vec3 to vec4, because that's how matrices in 3d are vec4;
     vec4 position = vec4(curlP, 1.0);
