@@ -1,3 +1,4 @@
+var THREE = require('three');
 var glslify = require('glslify');
 var PyramidBloomPass = require('./PyramidBloomPass')(THREE);
 
@@ -76,7 +77,7 @@ function loadVisualization () {
 
     var shader_fluuuid = new THREE.ShaderMaterial({
       uniforms: {
-        color : {type: 'c', value: new THREE.Color(0x000000)},
+        color : {type: 'c', value: new THREE.Color(0xffffff)},
         time  : {type : 'f', value: 0},
       },
       transparent    : true,

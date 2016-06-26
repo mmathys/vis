@@ -4,9 +4,9 @@ $graph-axis-font-size: 14px;
 $graph-axis-size: 1.5px;
 $graph-axis-tick-size: 1px;
 $data-title-font-size: 16px;
-$yr = 255;
-$yg = 231;
-$yb = 0;
+$yr: 255;
+$yg: 231;
+$yb: 0;
 
 
 #display-overlay {
@@ -14,12 +14,12 @@ $yb = 0;
   display: block;
   width: 100%;
   height: 100%;
-  background: rgba($yr, $yg, $yb, .3);
+  //background: rgba($yr, $yg, $yb, .3);
 }
 
 body {
-  background-color: rgb($yr, $yg, $yb);
-  //background-color: black;
+  //background-color: rgb($yr, $yg, $yb);
+  background-color: black;
   margin: 0px;
   overflow: hidden;
 }
