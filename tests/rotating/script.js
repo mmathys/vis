@@ -76,7 +76,7 @@ function loadVisualization () {
 
     var shader_fluuuid = new THREE.ShaderMaterial({
       uniforms: {
-        color : {type: 'c', value: new THREE.Color(0xFFFFFF)},
+        color : {type: 'c', value: new THREE.Color(0x000000)},
         time  : {type : 'f', value: 0},
       },
       transparent    : true,
@@ -126,6 +126,10 @@ function loadVisualization () {
      */
 
     scene.add( object );
+
+    // for yellow
+    //var c = 0xffffff;
+    //var c_l = 0x434343;
 
     //var testSphere = new THREE.SphereGeometry( 100.6, 128, 128 );
     var material = new THREE.MeshPhongMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
